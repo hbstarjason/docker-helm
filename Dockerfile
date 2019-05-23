@@ -10,7 +10,7 @@ RUN apk add --update ca-certificates \
  && tar -xvf helm-${HELM_VERSION}-linux-amd64.tar.gz \
  && mv linux-amd64/helm /usr/local/bin \
  && curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose  \
- && chmod +x /usr/local/bin/docker-compose
+ && chmod +x /usr/local/bin/docker-compose \
  && apk del --purge deps \
  && rm /var/cache/apk/* \
  && rm -f /helm-${HELM_VERSION}-linux-amd64.tar.gz
